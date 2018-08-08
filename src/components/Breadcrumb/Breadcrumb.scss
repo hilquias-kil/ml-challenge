@@ -1,0 +1,29 @@
+.Breadcrumb {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 15px 0;
+
+  li {
+    color: #999;
+
+    &::after {
+      content: ">";
+      display: inline-block;
+      margin-left: 5px;
+    }
+
+    & + li {
+      margin-left: 5px;
+    }
+
+    &:last-child {
+      font-weight: bold;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

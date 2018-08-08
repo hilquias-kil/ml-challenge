@@ -1,0 +1,39 @@
+.Header {
+  //background-color: #FFE600;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  flex-shrink: 0;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .search {
+    flex-grow: 1;
+    display: flex;
+    margin-left: 25px;
+
+    input {
+      flex-grow: 1;
+      padding: 10px 15px;
+      border: 0;
+      background-color: #fff;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .search-button {
+      font-size: 0;
+      line-height: 0;
+      width: 40px;
+      border: 0;
+      background-color: #EEE;
+      background-image: url('/ic_Search.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+  }
+}
