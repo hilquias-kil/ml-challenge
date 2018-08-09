@@ -8,11 +8,7 @@ import Header from '../components/Header'
 const Layout = ({ children, data }) => (
   <main className="Page">
     <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
+      title={"Front end test"}
     />
     <Header />
     <div className="content">

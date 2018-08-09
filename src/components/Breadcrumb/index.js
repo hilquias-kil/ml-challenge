@@ -3,8 +3,10 @@ import "./Breadcrumb.scss";
 
 export default () => (
   <ul className="Breadcrumb">
-    <li>Ipod</li>
-    <li>Tv</li>
-    <li>3gb</li>
+    <li>Electrónica, Audio y Video</li>
+    <li>iPod</li>
+    <li>Reproductores</li>
+    <li>iPod touch</li>
+    <li>32 GB</li>
   </ul>
 )

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { push } from "gatsby-link"
+import Link, { push } from 'gatsby-link'
 import './Header.scss'
 
 class Header extends Component {
@@ -10,15 +10,22 @@ class Header extends Component {
     }
   }
   sendSearch() {
-    if(this.state.search){
+    if (this.state.search) {
       push(`/items?q=${this.state.search}`)
+    }
+  }
+  handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      this.sendSearch()
     }
   }
   render() {
     return (
       <header className="Header">
         <div className="wrapper">
-          {/* <img src="/Logo_ML.png" /> */}
+          <Link to="/">
+            <img src="/Logo_ML.png" />
+          </Link>
           <div className="search">
             <input
               className="search-field"
@@ -26,6 +33,7 @@ class Header extends Component {
               name="search"
               placeholder="Nunca dejes de buscar"
               onChange={e => this.setState({ search: e.target.value })}
+              onKeyPress={e => this.handleKeyPress(e)}
               value={this.state.search}
             />
             <button className="search-button" onClick={() => this.sendSearch()}>

@@ -8,13 +8,15 @@ class ItemDetail extends Component {
     super(props)
     this.state = {
       data: {},
+      loading: false
     }
   }
   componentDidMount() {
+    this.setState({loading: true})
     axios.get(`/api/items/${this.props.query}`).then(resp => {
-      console.log(resp.data)
       this.setState({
         data: resp.data.item,
+        loading: false
       })
     })
   }
@@ -22,7 +24,7 @@ class ItemDetail extends Component {
     return (
       <div className="ItemDetail">
         <Breadcrumb />
-        <div className="container">
+        <div className={`container ${this.state.loading ? 'loading' : ''}`}>
           <div className="item-holder">
             <div className="item-image">
               <img src={this.state.data.picture} />
